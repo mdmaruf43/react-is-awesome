@@ -44,4 +44,4 @@
       ]
     },
     "plugins": ["prettier", "react", "react-hooks"]
-  }
+}
