@@ -17,6 +17,7 @@
     "jest": true
   },
   "rules": {
+    "react/no-undef": 0,
     "react/jsx-a11y/no-onchange": 0,
     "react/prefer-stateless-function": 0,
     "react/react-in-jsx-scope": 0,
