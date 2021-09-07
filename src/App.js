@@ -1,15 +1,12 @@
-/* eslint-disable no-unused-vars */
-import Bracket from './component/composition/Bracket';
-import Emoji from './component/composition/Emoji';
-import Text from './component/composition/Text';
+import ClickCounter from './component/ClickCounter';
+import HoverConter from './component/HoverConter';
 
 function App() {
     return (
-        <Emoji>
-            {({ addEmoji }) => (
-                <Bracket>{({ bracket }) => <Text addEmoji={addEmoji} bracket={bracket} />}</Bracket>
-            )}
-        </Emoji>
+        <>
+            <ClickCounter />
+            <HoverConter />
+        </>
     );
 }
 
