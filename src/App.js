@@ -1,29 +1,29 @@
+import React from 'react';
 import ClickCounter from './component/ClickCounter';
 import Counter from './component/Counter';
-import HoverConter from './component/HoverConter';
+import Section from './component/Section';
+import ThemeContext from './contexts/themeContext';
 
-function App() {
-    return (
-        <>
-            {/* <User render={(isLogedIn) => (isLogedIn ? 'Maruf' : 'Guest')} /> */}
-            {/* <Counter
-                render={(count, handleCount) => (
-                    <ClickCounter counter={count} handleCount={handleCount} />
-                )}
-            /> */}
-            <Counter>
-                {(count, handleCount) => <ClickCounter counter={count} handleCount={handleCount} />}
-            </Counter>
-            {/* <Counter
-                render={(count, handleCount) => (
-                    <HoverConter counter={count} handleCount={handleCount} />
-                )}
-            /> */}
-            <Counter>
-                {(count, handleCount) => <HoverConter counter={count} handleCount={handleCount} />}
-            </Counter>
-        </>
-    );
+class App extends React.Component {
+    state = {
+        theme: 'light',
+    };
+
+    render() {
+        const { theme } = this.state;
+        return (
+            <>
+                <Counter>
+                    {(count, handleCount) => (
+                        <ClickCounter counter={count} handleCount={handleCount} />
+                    )}
+                </Counter>
+                <ThemeContext.Provider value={{ theme }}>
+                    <Section />
+                </ThemeContext.Provider>
+            </>
+        );
+    }
 }
 
 export default App;
